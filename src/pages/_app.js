@@ -1,15 +1,25 @@
 import "@/styles/globals.css";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 // add bootstrap css
 import "bootstrap/dist/css/bootstrap.css";
+import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
+import { createBrowserSupabaseClient } from "@supabase/auth-helpers-nextjs";
+import { SessionContextProvider } from "@supabase/auth-helpers-react";
+import { useState } from "react";
 
-const queryClient = new QueryClient();
+const client = new QueryClient();
 
 export default function App({ Component, pageProps }) {
+  const [supabaseClient] = useState(() => createBrowserSupabaseClient());
+
   return (
-    <QueryClientProvider client={queryClient}>
-      <Component {...pageProps} />
-    </QueryClientProvider>
+    <SessionContextProvider
+      supabaseClient={supabaseClient}
+      initialSession={pageProps.initialSession}
+    >
+      <QueryClientProvider client={client}>
+        <Component {...pageProps} />
+      </QueryClientProvider>
+    </SessionContextProvider>
   );
 }
