@@ -12,7 +12,7 @@ export const ContactCards = () => {
   const { data, isLoading, error } = useQuery(["contacts"], getAllContacts);
 
   return (
-    <div className="w-full  mt-72 max-w-md p-4 bg-black border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+    <div className="w-full mt-10  max-w-md p-4 bg-black border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
       <div className="flex items-center justify-between mb-4">
         <h5 className="text-xl font-bold leading-none text-gray-900 dark:text-white">
           My Contacts
