@@ -12,32 +12,46 @@ export const ContactCards = () => {
   const { data, isLoading, error } = useQuery(["contacts"], getAllContacts);
 
   return (
-    <div className="relative w-screen flex min-h-screen flex-col justify-center overflow-auto bg-blue-100 py-6 px-5">
-      {data &&
-        data.map((contact, index) => {
-          return (
-            <div key={index} className="my-4">
-              <div className="absolute inset-0 bg-center "></div>
-              <div className="group relative mx-auto flex h-48 w-full max-w-md cursor-pointer flex-col justify-center overflow-hidden rounded-lg bg-white px-5 py-0 shadow-xl ring-1 ring-gray-900/5 [@media(hover:hover)]:justify-end [@media_not_(hover:hover)]:py-5">
-                <div className="transition-all ease-out">
-                  <h2 className="mt-2 text-lg font-semibold text-gray-800">
-                    {contact.full_name}
-                  </h2>
-                  <p className="line-clamp-2 w-screen mt-1 text-gray-500">
-                    Phone Number: {contact.phone}
-                  </p>
-                  <p className="line-clamp-2 w-screen mt-1 text-gray-500">
-                    Email: {contact.email}
-                  </p>
-                  <p className="line-clamp-2 w-screen mt-1 text-gray-500">
-                    Address: {contact.address}
-                  </p>
-                </div>
-              </div>
-            </div>
-          );
-        })}
+    <div className="w-full  mt-72 max-w-md p-4 bg-black border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+      <div className="flex items-center justify-between mb-4">
+        <h5 className="text-xl font-bold leading-none text-gray-900 dark:text-white">
+          My Contacts
+        </h5>
+      </div>
+      <div className="flow-root">
+        <ul
+          role="list"
+          className="divide-y pl-0 divide-gray-200 dark:divide-gray-700"
+        >
+          {data &&
+            data.map((contacts, index) => {
+              return (
+                <li key={index} className="py-3 sm:py-4">
+                  <div className="flex items-center space-x-4">
+                    <div className="flex-shrink-0"></div>
+                    <div className="flex-1 min-w-0">
+                      <p className="text-sm mb-1 font-medium text-gray-900 truncate dark:text-white">
+                        NAME
+                      </p>
+                      <p className="text-sm mb-1 text-gray-500 truncate dark:text-gray-400">
+                        phone:
+                      </p>
+                      <p className="text-sm mb-1 text-gray-500 truncate dark:text-gray-400">
+                        email:
+                      </p>
+                      <p className="text-sm mb-1 text-gray-500 truncate dark:text-gray-400">
+                        address:
+                      </p>
+                    </div>
+                    <div className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
+                      PIC{/* INSERT PICTURE HERE */}
+                    </div>
+                  </div>
+                </li>
+              );
+            })}
+        </ul>
+      </div>
     </div>
-    
   );
 };
