@@ -31,16 +31,16 @@ export const ContactCards = () => {
                     <div className="flex-shrink-0"></div>
                     <div className="flex-1 min-w-0">
                       <p className="text-sm mb-1 font-medium text-gray-900 truncate dark:text-white">
-                        NAME
+                        {contacts.full_name}
                       </p>
                       <p className="text-sm mb-1 text-gray-500 truncate dark:text-gray-400">
-                        phone:
+                        phone: {contacts.phone}
                       </p>
                       <p className="text-sm mb-1 text-gray-500 truncate dark:text-gray-400">
-                        email:
+                        email: {contacts.email}
                       </p>
                       <p className="text-sm mb-1 text-gray-500 truncate dark:text-gray-400">
-                        address:
+                        address: {contacts.address}
                       </p>
                     </div>
                     <div className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
