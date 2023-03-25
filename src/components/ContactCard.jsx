@@ -1,16 +1,19 @@
 import { useQuery } from "@tanstack/react-query";
+import { useSupabaseClient } from "@supabase/auth-helpers-react";
 import Link from "next/link";
 
-const getAllContacts = () => {
-  const options = { method: "GET" };
-
-  return fetch(
-    "https://assets.breatheco.de/apis/fake/contact/agenda/agenda_2021"
-  ).then((response) => response.json());
-};
-
 export const ContactCards = () => {
-  const { data, isLoading, error } = useQuery(["contacts"], getAllContacts);
+  const supabaseClient = useSupabaseClient();
+  const getAllContacts = () => {
+    return supabaseClient
+      .from("contact_information")
+      .select("*")
+      .then((response) => response.data);
+  };
+  const { data, isLoading, error } = useQuery(
+    ["contact_information"],
+    getAllContacts
+  );
 
   return (
     <div className="w-full mt-10  max-w-md p-4 bg-gray-100 border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
