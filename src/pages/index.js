@@ -14,9 +14,11 @@ export default function Home() {
     );
   } else {
     return (
-      <div className="flex flex-col justify-start items-center mt-10 dark:bg-slate-400 bg-white w-screen min-h-screen">
-        <NavButtons />
-        <ContactCards />
+      <div className="flex flex-col justify-start items-center dark:bg-black bg-gray-800 w-screen min-h-screen">
+        <div className="mt-10">
+          <NavButtons />
+          <ContactCards />
+        </div>
       </div>
     );
   }
