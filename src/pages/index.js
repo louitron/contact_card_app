@@ -14,8 +14,8 @@ export default function Home() {
     );
   } else {
     return (
-      <div className="flex flex-col justify-start items-center dark:bg-black bg-gray-800 w-screen min-h-screen">
-        <div className="mt-10">
+      <div className="flex flex-col justify-start items-center w-screen min-h-screen bg-green-900">
+        <div className="px-10 mt-5 w-full">
           <NavButtons />
           <ContactCards />
         </div>

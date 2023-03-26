@@ -9,7 +9,7 @@ export const Login = () => {
   const supabaseClient = useSupabaseClient();
 
   return (
-    <div className="h-screen w-screen md:max-h-screen-md md:max-h-screen-md  flex flex-col justify-center items-center">
+    <div className="flex flex-col justify-center items-center w-screen h-screen md:max-h-screen-md">
       <div className="text-4xl">Welcome!</div>
       <div className="w-1/3">
         <Auth
