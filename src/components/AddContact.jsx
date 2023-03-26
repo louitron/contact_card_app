@@ -94,7 +94,7 @@ export function AddContact() {
           />
         </div>
 
-        <button type="submit" className="btn btn-primary" disabled={isLoading}>
+        <button type="submit" className="px-3 py-4 w-full text-white bg-black rounded-md focus:bg-neutral-800 focus:outline-none" disabled={isLoading}>
           {isLoading ? "Saving contact" : "Save Contact"}
         </button>
       </form>
