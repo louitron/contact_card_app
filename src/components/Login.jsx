@@ -9,9 +9,9 @@ export const Login = () => {
   const supabaseClient = useSupabaseClient();
 
   return (
-    <div className="flex flex-col justify-center items-center w-screen h-screen md:max-h-screen-md">
-      <div className="text-4xl">Welcome!</div>
-      <div className="w-1/3">
+    <div className="flex flex-col justify-start items-center pt-4 w-screen min-h-screen bg-green-900">
+      <div className="text-4xl text-white">Welcome!</div>
+      <div className="w-1/3 text-white">
         <Auth
           supabaseClient={supabaseClient}
           appearance={{ theme: ThemeSupa }}
