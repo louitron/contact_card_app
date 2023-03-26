@@ -16,7 +16,7 @@ export const ContactCards = () => {
   );
 
   return (
-    <div className="mt-10 p-4 bg-stone-700 border border-gray-200 rounded-lg  sm:p-8 dark:border-gray-700 shadow-[-2px_-2px_20px_rgba(0,255,0,1),3px_3px_10px_rgba(0,0,0,0.2)] ">
+    <div className="mt-10 p-4 bg-sky-900 border border-gray-200 rounded-lg  sm:p-8 dark:border-gray-700 shadow-[-2px_-2px_20px_rgba(0,255,0,1),3px_3px_10px_rgba(0,0,0,0.2)] ">
       <div className="flex justify-between items-center mb-4">
         <h5 className="text-xl font-bold leading-none text-gray-900 dark:text-white">
           My Contacts
