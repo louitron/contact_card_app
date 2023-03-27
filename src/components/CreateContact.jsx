@@ -41,7 +41,7 @@ export function CreateContact() {
 
   return (
     <div className="flex overflow-visible relative flex-col justify-center px-4 py-6 w-screen min-h-screen sm:py-12">
-      <div className="relative px-6 pt-10 pb-8 mx-auto w-full max-w-md bg-sky-800 ring-1 shadow-xl ring-gray-900/5 sm:rounded-xl sm:px-10">
+      <div className="relative px-6 pt-10 pb-8 mx-auto w-full max-w-md bg-cyan-800 ring-1 shadow-[-2px_-2px_20px_rgba(0,255,0,1),3px_3px_10px_rgba(0,0,0,0.2)]  ring-gray-900/5 sm:rounded-xl sm:px-10">
         <div className="w-full">
           <div className="text-center">
             <h1 className="text-3xl font-semibold text-white">New Contact</h1>
@@ -51,7 +51,7 @@ export function CreateContact() {
               <div className="relative mt-5">
                 <label
                   htmlFor="full_name"
-                  className="absolute top-0 left-0 px-1 ml-3 text-sm text-gray-500 bg-white transition-all duration-100 ease-in-out transform origin-left -translate-y-1/2 pointer-events-none peer-placeholder-shown:top-1/2 peer-placeholder-shown:ml-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-0 peer-focus:ml-3 peer-focus:text-sm peer-focus:text-gray-800"
+                  className="absolute top-0 left-0 px-1 ml-3 text-sm text-gray-500 bg-white rounded transition-all duration-100 ease-in-out transform origin-left -translate-y-1/2 pointer-events-none peer-placeholder-shown:top-1/2 peer-placeholder-shown:ml-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-0 peer-focus:ml-3 peer-focus:text-sm peer-focus:text-gray-800"
                 >
                   Full Name:
                 </label>
@@ -69,7 +69,7 @@ export function CreateContact() {
               <div className="relative mt-5">
                 <label
                   htmlFor="email"
-                  className="absolute top-0 left-0 px-1 ml-3 text-sm text-gray-500 bg-white transition-all duration-100 ease-in-out transform origin-left -translate-y-1/2 pointer-events-none peer-placeholder-shown:top-1/2 peer-placeholder-shown:ml-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-0 peer-focus:ml-3 peer-focus:text-sm peer-focus:text-gray-800"
+                  className="absolute top-0 left-0 px-1 ml-3 text-sm text-gray-500 bg-white rounded transition-all duration-100 ease-in-out transform origin-left -translate-y-1/2 pointer-events-none peer-placeholder-shown:top-1/2 peer-placeholder-shown:ml-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-0 peer-focus:ml-3 peer-focus:text-sm peer-focus:text-gray-800"
                 >
                   Email:
                 </label>
@@ -89,7 +89,7 @@ export function CreateContact() {
               <div className="relative mt-5">
                 <label
                   htmlFor="phone"
-                  className="absolute top-0 left-0 px-1 ml-3 text-sm text-gray-500 bg-white transition-all duration-100 ease-in-out transform origin-left -translate-y-1/2 pointer-events-none peer-placeholder-shown:top-1/2 peer-placeholder-shown:ml-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-0 peer-focus:ml-3 peer-focus:text-sm peer-focus:text-gray-800"
+                  className="absolute top-0 left-0 px-1 ml-3 text-sm text-gray-500 bg-white rounded transition-all duration-100 ease-in-out transform origin-left -translate-y-1/2 pointer-events-none peer-placeholder-shown:top-1/2 peer-placeholder-shown:ml-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-0 peer-focus:ml-3 peer-focus:text-sm peer-focus:text-gray-800"
                 >
                   Phone:
                 </label>
@@ -107,7 +107,7 @@ export function CreateContact() {
               <div className="relative mt-5">
                 <label
                   htmlFor="address"
-                  className="absolute top-0 left-0 px-1 ml-3 text-sm text-gray-500 bg-white transition-all duration-100 ease-in-out transform origin-left -translate-y-1/2 pointer-events-none peer-placeholder-shown:top-1/2 peer-placeholder-shown:ml-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-0 peer-focus:ml-3 peer-focus:text-sm peer-focus:text-gray-800"
+                  className="absolute top-0 left-0 px-1 ml-3 text-sm text-gray-500 bg-white rounded transition-all duration-100 ease-in-out transform origin-left -translate-y-1/2 pointer-events-none peer-placeholder-shown:top-1/2 peer-placeholder-shown:ml-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-0 peer-focus:ml-3 peer-focus:text-sm peer-focus:text-gray-800"
                 >
                   Address:
                 </label>

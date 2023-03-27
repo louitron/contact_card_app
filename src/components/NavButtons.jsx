@@ -8,13 +8,16 @@ export const NavButtons = () => {
   const supabaseClient = useSupabaseClient();
   return (
     <div class="flex overflow-visible relative z-10 gap-5 justify-center items-center">
-      <button
-        ontouchstart=""
-        class="group flex items-center justify-center rounded-lg bg-sky-700 px-4 py-3 shadow-[0px_0px_20px_rgba(0,255,0,1),10px_10px_10px_rgba(0,0,0,0.2)] active:shadow-[inset_-1px_-1px_5px_rgba(0,255,0,0.5),inset_1px_1px_5px_rgba(0,255,0,0.5)]"
-      >
-        <span class="sr-only">Home</span>
-        <AiFillContacts className="text-white scale-150" />
-      </button>
+      <Link href="/">
+        <button
+          ontouchstart=""
+          class="group flex items-center justify-center rounded-lg bg-sky-700 px-4 py-3 shadow-[0px_0px_20px_rgba(0,255,0,1),10px_10px_10px_rgba(0,0,0,0.2)] active:shadow-[inset_-1px_-1px_5px_rgba(0,255,0,0.5),inset_1px_1px_5px_rgba(0,255,0,0.5)]"
+        >
+          <span class="sr-only">Home</span>
+          <AiFillContacts className="text-white scale-150" />
+        </button>
+      </Link>
+      
       <Link href="/components/ContactCard">
         <Link href="/createContact">
           <button
