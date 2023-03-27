@@ -58,7 +58,7 @@ export function CreateContact() {
                 <input
                   {...register("full_name", { required: true })}
                   type="text"
-                  name="full-name"
+                  name="full_name"
                   id="full_name"
                   placeholder="Full Name"
                   className="px-3 py-3 w-full rounded-md border border-gray-300 shadow peer shadow-gray-100 placeholder:text-transparent focus:border-gray-500 focus:outline-none"
