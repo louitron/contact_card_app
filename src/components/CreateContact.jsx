@@ -41,7 +41,7 @@ export function CreateContact() {
 
   return (
     <div className="flex overflow-visible relative flex-col justify-center px-4 py-6 w-screen min-h-screen sm:py-12">
-      <div className="relative px-6 pt-10 pb-8 mx-auto w-full max-w-md bg-cyan-800 ring-1 shadow-[-2px_-2px_20px_rgba(0,255,0,1),3px_3px_10px_rgba(0,0,0,0.2)]  ring-gray-900/5 sm:rounded-xl sm:px-10">
+      <div className="relative px-6 pt-10 pb-8 mx-auto w-full max-w-md bg-gray-800 ring-1 shadow-[-2px_-2px_20px_rgba(0,255,0,1),3px_3px_10px_rgba(0,0,0,0.2)]  ring-gray-900/5 sm:rounded-xl sm:px-10">
         <div className="w-full">
           <div className="text-center">
             <h1 className="text-3xl font-semibold text-white">New Contact</h1>

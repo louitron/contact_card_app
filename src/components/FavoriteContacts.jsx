@@ -1,10 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
 import { useSupabaseClient } from "@supabase/auth-helpers-react";
-import { AiFillStar } from "react-icons/ai";
 import Link from "next/link";
-import { QueryClient } from "react-query";
 
-export const ContactCards = () => {
+export const FavoriteContacts = () => {
   const supabaseClient = useSupabaseClient();
   const getAllContacts = () => {
     return supabaseClient
@@ -12,20 +10,6 @@ export const ContactCards = () => {
       .select("*")
       .then((response) => response.data);
   };
-
-  const handleFavorites = async (contactId, isFavorite) => {
-    const { error } = await supabaseClient
-      .from("contact_information")
-      .update({ isFavorite: !isFavorite })
-      .eq("id" , contactId);
-
-    if (error) {
-      console.error("Error updating favorite status:", error)
-    } else {
-      QueryClient.invalidateQueries("contact_information")
-    }
-  }
-  
   const { data, isLoading, error } = useQuery(
     ["contact_information"],
     getAllContacts
@@ -65,11 +49,6 @@ export const ContactCards = () => {
                     </div>
                     <div className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
                       PIC{/* INSERT PICTURE HERE */}
-                    </div>
-                    <div className="text-white scale-150">
-                      <button onClick={handleFavorites}>
-                        <AiFillStar />
-                      </button>
                     </div>
                   </div>
                 </li>
