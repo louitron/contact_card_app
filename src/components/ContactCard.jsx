@@ -24,12 +24,10 @@ export const ContactCards = () => {
       .single();
     console.log("Row data before update:", beforeUpdate);
 
-    const { data: upsertData, error: upsertError } = await supabaseClient
+    const { data: updatedData, error: updateError } = await supabaseClient
       .from("contact_information")
-      .upsert(
-        { id: contactId, is_favorite: !is_favorite },
-        { onConflict: "id" }
-      );
+      .update({ is_favorite: !is_favorite })
+      .eq("id", contactId);
 
     const { data: afterUpdate } = await supabaseClient
       .from("contact_information")
@@ -38,8 +36,8 @@ export const ContactCards = () => {
       .single();
     console.log("Row data after update:", afterUpdate);
 
-    if (upsertError) {
-      console.error("Error updating favorite status:", upsertError);
+    if (updateError) {
+      console.error("Error updating favorite status:", updateError);
     } else {
       queryClient.invalidateQueries("contact_information");
     }
