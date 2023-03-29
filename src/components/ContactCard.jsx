@@ -1,8 +1,7 @@
-import { useQuery } from "@tanstack/react-query";
+import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { useSupabaseClient } from "@supabase/auth-helpers-react";
 import { AiFillStar } from "react-icons/ai";
 import Link from "next/link";
-import { QueryClient } from "react-query";
 
 export const ContactCards = () => {
   const supabaseClient = useSupabaseClient();
@@ -13,19 +12,39 @@ export const ContactCards = () => {
       .then((response) => response.data);
   };
 
-  const handleFavorites = async (contactId, isFavorite) => {
-    const { error } = await supabaseClient
-      .from("contact_information")
-      .update({ isFavorite: !isFavorite })
-      .eq("id" , contactId);
+  const queryClient = useQueryClient(); // Add this line to get the queryClient instance
 
-    if (error) {
-      console.error("Error updating favorite status:", error)
+  const handleFavorites = async (contactId, is_favorite) => {
+    console.log("contactId:", contactId, "is_favorite:", is_favorite);
+
+    const { data: beforeUpdate } = await supabaseClient
+      .from("contact_information")
+      .select("*")
+      .eq("id", contactId)
+      .single();
+    console.log("Row data before update:", beforeUpdate);
+
+    const { data: upsertData, error: upsertError } = await supabaseClient
+      .from("contact_information")
+      .upsert(
+        { id: contactId, is_favorite: !is_favorite },
+        { onConflict: "id" }
+      );
+
+    const { data: afterUpdate } = await supabaseClient
+      .from("contact_information")
+      .select("*")
+      .eq("id", contactId)
+      .single();
+    console.log("Row data after update:", afterUpdate);
+
+    if (upsertError) {
+      console.error("Error updating favorite status:", upsertError);
     } else {
-      QueryClient.invalidateQueries("contact_information")
+      queryClient.invalidateQueries("contact_information");
     }
-  }
-  
+  };
+
   const { data, isLoading, error } = useQuery(
     ["contact_information"],
     getAllContacts
@@ -67,7 +86,11 @@ export const ContactCards = () => {
                       PIC{/* INSERT PICTURE HERE */}
                     </div>
                     <div className="text-white scale-150">
-                      <button onClick={handleFavorites}>
+                      <button
+                        onClick={() =>
+                          handleFavorites(contacts.id, contacts.is_favorite)
+                        }
+                      >
                         <AiFillStar />
                       </button>
                     </div>
